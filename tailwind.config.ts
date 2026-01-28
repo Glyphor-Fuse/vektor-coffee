@@ -13,29 +13,29 @@ export default {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--background))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--primary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
-          foreground: "#ffffff",
+          foreground: "hsl(var(--accent-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--secondary))",
+          foreground: "hsl(var(--muted-foreground))",
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        mono: ["Space Mono", "monospace"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "sans-serif"],
       },
-      gridTemplateColumns: {
-        'bauhaus': 'repeat(12, minmax(0, 1fr))',
+      backgroundImage: {
+        'brushed-metal': "linear-gradient(to right, #1a1a1a 0%, #333333 50%, #1a1a1a 100%)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;

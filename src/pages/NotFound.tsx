@@ -1,33 +1,22 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background p-6">
-      <motion.h1 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-9xl font-black text-primary mb-4"
-      >
-        404
-      </motion.h1>
-      <motion.p 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        className="text-xl text-muted mb-8 uppercase tracking-widest font-mono"
-      >
-        System Error: Void Reached
-      </motion.p>
-      <motion.div
-        whileHover={{ x: -10 }}
-      >
-        <Link to="/" className="flex items-center gap-2 bg-accent text-white px-8 py-4 font-bold uppercase tracking-tighter">
-          <ArrowLeft size={20} />
-          Return to Foundation
+    <div className="min-h-screen flex items-center justify-center bg-primary text-secondary p-10">
+      <div className="text-center">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-9xl font-display font-bold mb-4"
+        >
+          404
+        </motion.h1>
+        <p className="text-xl mb-8 font-mono">SYSTEM_ERROR: ROUTE_NOT_FOUND</p>
+        <Link to="/" className="inline-block px-8 py-4 border border-secondary hover:bg-secondary hover:text-primary transition-colors">
+          RETURN TO ORIGIN
         </Link>
-      </motion.div>
+      </div>
     </div>
   );
 }

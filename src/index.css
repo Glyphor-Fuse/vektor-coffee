@@ -1,77 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 45 10% 95%;
-    --foreground: 0 0% 5%;
-    --primary: 0 0% 12%;
-    --secondary: 0 0% 75%;
-    --accent: 0 85% 45%;
-    --muted: 0 0% 40%;
-    --border: 0 0% 12%;
+    --background: 0 0% 92%;
+    --foreground: 0 0% 7%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 5% 85%;
+    --secondary-foreground: 0 0% 9%;
+    --accent: 12 85% 50%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 0 0% 45%;
+    --muted-foreground: 0 0% 45%;
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 0 0% 15%;
+    --radius: 0rem;
   }
+}
 
+@layer base {
   * {
     @apply border-border;
   }
-
   body {
-    @apply font-sans;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-black tracking-tighter uppercase;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
   }
 }
 
 .bauhaus-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 0;
+  gap: 1rem;
 }
 
-.bauhaus-cell {
-  border: 1px solid hsl(var(--primary));
-  padding: 2rem;
+.concrete-texture {
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
 }
 
-.strobe-accent {
-  animation: strobe 0.5s step-end infinite;
-}
-
-@keyframes strobe {
-  50% { opacity: 0; }
-}
-
-
-/* Pexels Image Attribution Styles */
-.image-slot {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 8px;
-}
-.image-slot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-.image-attribution {
-  position: absolute;
-  bottom: 4px;
-  right: 8px;
-  font-size: 10px;
-  color: rgba(255,255,255,0.7);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-.image-attribution:hover {
-  color: rgba(255,255,255,0.95);
+.smokey-glass {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

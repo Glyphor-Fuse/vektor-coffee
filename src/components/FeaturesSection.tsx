@@ -1,30 +1,49 @@
 import { motion } from "framer-motion";
-import { Terminal, Cpu, Layers, Maximize } from "lucide-react";
 
 const features = [
-  { title: "Functional Modularism", icon: Layers, desc: "Building blocks designed for peak performance and infinite scalability." },
-  { title: "Industrial Core", icon: Cpu, desc: "A robust engine powered by modern frameworks and minimal overhead." },
-  { title: "Precision Syntax", icon: Terminal, desc: "Code that reflects the clarity of a blueprint. Every line matters." },
-  { title: "Spatial Integrity", icon: Maximize, desc: "Maintaining the balance between void and structure across all displays." }
+  {
+    title: "STRUCTURE",
+    desc: "Built on the principles of Bauhaus architecture, our roasting facility optimizes thermal dynamics.",
+    img: "///IMG:industrial architecture detail|square|monochrome///"
+  },
+  {
+    title: "PRECISION",
+    desc: "Laser-focused extraction metrics. 18.5g in, 37g out, 27 seconds. No deviations.",
+    img: "///IMG:mechanical coffee scales detail|square|monochrome///"
+  },
+  {
+    title: "MATERIAL",
+    desc: "Smoked glass, surgical steel, and ethically sourced heirloom grains.",
+    img: "///IMG:coffee beans on steel plate|square|monochrome///"
+  }
 ];
 
 export function FeaturesSection() {
   return (
-    <section id="systems" className="py-24 bg-primary text-background">
+    <section className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-secondary/20">
+        <div className="flex justify-between items-end mb-16 border-b border-primary/10 pb-8">
+          <h3 className="text-4xl font-display font-bold">CORE PRINCIPLES</h3>
+          <span className="text-sm font-mono text-muted">VOL 01 // 2024</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
           {features.map((f, i) => (
-            <motion.div 
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 50 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-10 border-r border-b border-secondary/20 hover:bg-accent transition-colors duration-500 group"
+              transition={{ delay: i * 0.2 }}
+              className="border border-primary/10 p-10 hover:bg-white transition-colors group relative overflow-hidden"
             >
-              <f.icon className="mb-8 w-12 h-12 text-accent group-hover:text-white transition-colors" />
-              <h3 className="text-2xl mb-4 group-hover:translate-x-2 transition-transform">{f.title}</h3>
-              <p className="font-mono text-sm opacity-60 group-hover:opacity-100">{f.desc}</p>
+              <div className="mb-8 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                {f.img}
+              </div>
+              <h4 className="text-2xl font-display font-bold mb-4 tracking-tighter">{f.title}</h4>
+              <p className="text-muted leading-relaxed">{f.desc}</p>
+              <div className="absolute bottom-4 right-4 text-primary/10 font-mono text-6xl select-none">
+                0{i + 1}
+              </div>
             </motion.div>
           ))}
         </div>
